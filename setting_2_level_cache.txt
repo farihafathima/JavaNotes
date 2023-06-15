@@ -1,0 +1,15 @@
+steps to Enable second level cache
+-------------------------------------------
+1.type net.sf.ehchache maven
+copy the dependency in to pom.xml
+
+2.type hibernate cache maven 
+3.
+<property name="cache.use_second_level_cache">
+true
+</property>
+<property name="cache.region.factory_class">
+org.hibernate.cache.ehchache.internal.EhcacheRegionFactory
+</property>
+4.write @Cacheable and @Cache annotaion on the entity class for which second level caching is to be enabled
+5.write an application to test second level caching

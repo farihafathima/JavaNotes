@@ -1,0 +1,67 @@
+Functioanl interfaces
+---------------------------
+
+->An interface which have only one abstract method inside it.
+->It IS also know as single abstarct method(SAM)
+->To implement functional interface recommended to use Lambda expression or Method referencess or constructor referencess
+->Add an annotation @FunctionalInterface so that extra abstract method is not added.
+->If you try add any extra abstract method without annotation it won't give you any comilation error but the lambda expression related to it will be broken.
+->we can instantiate the functional interface using lambda expression or by using annonimous class.
+ex:Runnable Interface
+Runnable r=new Runnable() {
+
+			@Override
+			public void run() {
+				System.out.println("I am thread my task is executing......");
+				
+			}
+
+	};
+
+->Since we know that functional interface have only one Abstract method so that it is to implement the single method with lambda expression.
+->The Interface can also declare the abstrat methods from the java.lang.object class,but still the interface is called as Functional Interface.
+-->Interface can extend another interface and incase the interface it is extending a functional interface eventhough new interface does not contain
+ any anstract method
+the new interface is also a Functional Interface.
+
+Lamda Expressions
+-----------------
+
+-->Java lambda Expressions are functional programming.Which can be created without belonging to any class.A lambda expression can be passed around as if it was an object and execute
+on demanad.
+-->When you define the lambda object you are essentially implementing a single method from the interface.The Lambda object implements that Interface.
+but defining a lambda it does not execute.it only defines it.you should have explicit call to the abstract method.
+-->number of parameters should match the number of paramertes in abstract method in functional Interface.
+1.Zero Parametres
+()->System.out.println(); 
+
+2.One Parameter
+(param)->System.out.println("");
+you can avoid the () of parameters.
+
+3>Multiple Parameters
+-->for Multiple Parameters parantheses for parameters are required.
+(a,b)->{
+---------body of the method/implementation-------
+}
+
+4.Lambda expression with return type.
+
+
+Type Inference
+---------------
+-->it is a java compliers ability to look each method invocation and corresponding declarion to determine the type argument
+ that make the invocation applicable.
+-->The Interface algorithm determine the types of the arguments and,if available,the type that te result is being assigned,or returned.
+
+Method Reerence
+-----------------
+1.Reference to static method
+ContainingClass:: static MethodName
+2.Reference to a constructor
+ClassName::new
+3.Reference to an Instance method of an arbitarty Object of a paerticular type
+ContainingClass::MethodName
+4.Reference to an instance method of a particular object
+ContainingObject::InstanceMethodName
+
